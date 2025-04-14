@@ -1,0 +1,20 @@
+apiVersion: 1
+
+datasources:
+  - name: Postgres
+    type: postgres
+    access: proxy
+    url: db:5432
+    user: postgres
+    uid: adv-postgres-ds
+    secureJsonData:
+      password: 'mypass'
+    jsonData:
+      database: adv_platform
+      sslmode: 'disable'
+      maxOpenConns: 100
+      maxIdleConns: 100
+      maxIdleConnsAuto: true
+      connMaxLifetime: 14400
+      postgresVersion: 1500
+      timescaledb: false
